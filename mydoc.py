@@ -7,6 +7,7 @@
 #  5-  CellularDevice for remote xbee
 #  6- IPprotocol & IPv4Address is for server config
 from digi.xbee.devices import XBeeDevice , WiFiDevice , CellularDevice , IPProtocol ,IPv4Address
+from rssi import RSSI_Scan , RSSI_Localizer # imports rssi library 
 # using XBeeDevice
 device = XBeeDevice("COM1", 9600) # Com replaced with the port ,, 9600 is the baudrate
 device.open() #opens the conncetion with the device 
@@ -26,3 +27,4 @@ device3.send_ip_data(IPv4Address("52.43.121.77"), 11001, IPProtocol.TCP, "Hello 
 ip_message = device3.read_ip_data()
 print(ip_message.data.decode("utf8") if ip_message is not None else "ERROR")
 device3.colse()
+
