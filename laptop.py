@@ -7,13 +7,13 @@ PORT = "/dev/ttyUSB0"
 BAUD_RATE = 9600
 
 DATA_TO_SEND = "Hello XBee!"
-REMOTE_NODE_ID = "REMOTE"
+REMOTE_NODE_ID = "RR"
 
 
 def main():
-    print(" +--------------------------------------+")
-    print(" | XBee Python Library Send Data Sample |")
-    print(" +--------------------------------------+\n")
+    print(" +-------------+")
+    print(" | Working ..! |")
+    print(" +-------------+\n")
 
     device = XBeeDevice(PORT, BAUD_RATE)
 
