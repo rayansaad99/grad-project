@@ -51,11 +51,14 @@ def main():
             r= int.from_bytes(rssi, byteorder='big')
             r1= int.from_bytes(rssi1, byteorder='big')
             r2= int.from_bytes(rssi2, byteorder='big')
-            avg = (r+r1+r2)/3
-            print(f"device1= {r}")
-            print(f"device2= {r1}")
-            print(f"device3= {r2}")
-            print(f"avg= {avg}")
+            
+            res=(f"-{r}dbm")
+            res1=(f"-{r1}dbm")
+            res2=(f"-{r2}dbm")
+            with open('data.csv', 'a') as outfile:
+                writer = csv.writer(outfile)
+                writer.writerow([res , res1 , res2])
+            print([res, res1 ,res2])
             time.sleep(1)
             
 
@@ -66,4 +69,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-e A
